@@ -13,10 +13,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Debug AWS_REGION
-        run: echo "AWS Region is $AWS_REGION"
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
+      - name: Debug Directory Structure
+        run: ls -la
+
+      - name: Check If Portfolio Directory Exists
+        run: ls -la "CI-CD_Project Portfolio"
 
       - name: Sync Files to S3
         uses: jakejarvis/s3-sync-action@master
@@ -26,5 +27,5 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: './CI-CD_Project Portfolio'  # Ensure this folder exists in your repo
+          AWS_REGION: "ap-south-1"
+          SOURCE_DIR: "CI-CD_Project Portfolio"  # Make sure this matches the actual folder name
