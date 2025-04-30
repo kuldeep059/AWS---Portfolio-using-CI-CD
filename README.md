@@ -8,10 +8,6 @@ This repository contains the CI/CD pipeline for deploying a static AWS portfolio
 ## Overview
 This project automates the deployment of a static portfolio website using AWS S3 and GitHub Actions. Whenever changes are pushed to the repository, GitHub Actions triggers the CI/CD pipeline, which updates the S3 bucket hosting the portfolio.
 
-## Architecture Diagram
-![CI/CD Flowchart](./path-to-your-diagram.png)  
-*(Replace `path-to-your-diagram.png` with the actual image path in your repository.)*
-
 ## Tech Stack
 - **AWS S3** – Hosts the static website
 - **GitHub Actions** – Automates the deployment process
